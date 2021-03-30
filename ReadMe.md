@@ -1,5 +1,5 @@
 # Bot-Time
-![](images/bot-time.png)
+![](images/bot-time.jpg)
 
 # Project 2 Fintech 
 - The Bot-Time project resulted in the building of a profitable automated trading bot that uses deep learning to make trades on Webull.

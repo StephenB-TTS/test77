@@ -11,25 +11,23 @@
 # The Project
 ## Gathering the Data:
 This is how we read-in the data:
-![](images/get_data.PNG) 
-
-## Reading In The Data:
-This is how we read-in the data:
-1. Stock Tickers Price Data
+![](images/get_data.PNG)
 ![](images/load_data.PNG)
 
 ## Test-Train-Split:
-We had to drop columns, set/reset indexes, replace values. We also had to use try & except statements to read in the data without ending the functions on error.
-![](images/test_train_split.PNG)
+Preparing the data for the model.
+![](images/test_train_split1.PNG)
+![](images/test_train_split2.PNG)
 
+We trained the data.
 ![](images/train1.PNG)
 ![](images/train2.PNG)
 
 ## Load for Dash:
-- This is the 1st combined dataframe of the stock price & summary info:
+Data is being prepared so it can be displayed in Dash.
 ![](images/load_for_dash.PNG)
 
-
+## Get Final Data:
 This function takes the "model" and "data" dict to construct a final dataframe that includes the features along with true and predicted prices of the testing dataset
 ![](images/get_final_data1.PNG)
 ![](images/get_final_data2.PNG)
@@ -40,7 +38,9 @@ This function takes the "model" and "data" dict to construct a final dataframe t
 ## Accuracy:
 ![](images/calc_accuracy.PNG)
 
-#Data Visualizations:
+# Data Visualizations:
+When deciding on a trading strategy, one might consider using indicators to help guide the decision whether to buy, sell or hold a position. Some of the indicators explored in the Bot-Time project are Bollinger Bands, EMA Crossover Point and RSI Indicators.  Here are some illustrations that show how they were used in the Bot-Time strategy.
+
 ## Plot:
 ![](images/prediction_plot.PNG)
 
@@ -48,7 +48,6 @@ This function takes the "model" and "data" dict to construct a final dataframe t
 Bollinger Bands:
 ![](images/Bollinger_Bands.png)
 
-Interactive Candlestick Chart with panel selector:
 ![](images/Candlestick.png)
 
 EMA Crossover Points:
@@ -64,17 +63,7 @@ Webull Options Chain:
 ![](images/Webull_Options_Chain.png)
 
 ## Final Analysis:
+Throughout the project, several models were tested, however, our third model proved to be the most accurate.
 
 
-When deciding on a trading strategy, one might consider using indicators to help guide the decision whether to buy, sell or hold a position. Some of the indicators explored in the Bot-Time project are Bollinger Bands, EMA Crossover Point and RSI Indicators.  Here are some illustrations that show how they were used in the Bot-Time strategy
 
-
-===============================================================================
-## Charts & Analysis:
-### (Sum Total column indicates the ranking values)
-1. These are the Communications & Consumer Sector Rankings:
-![](images/add_image.png)
-2. These are the Energy & Financial Sector Rankings:
-![](images/add_image.png)
-3. These are the Tech Sector Rankings:
-![](images/add_image.png)

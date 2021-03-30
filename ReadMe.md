@@ -11,38 +11,38 @@
 # The Project
 ## Gathering the Data:
 This is how we read-in the data:
-![](images/get_data.png) 
+![](images/get_data.PNG) 
 
 ## Reading In The Data:
 This is how we read-in the data:
 1. Stock Tickers Price Data
-![](images/load_data.png)
+![](images/load_data.PNG)
 
 ## Test-Train-Split:
 We had to drop columns, set/reset indexes, replace values. We also had to use try & except statements to read in the data without ending the functions on error.
-![](images/test_train_split.png)
+![](images/test_train_split.PNG)
 
-![](images/train1.png)
-![](images/train2.png)
+![](images/train1.PNG)
+![](images/train2.PNG)
 
 ## Load for Dash:
 - This is the 1st combined dataframe of the stock price & summary info:
-![](images/load_for_dash.png)
+![](images/load_for_dash.PNG)
 
 
 This function takes the "model" and "data" dict to construct a final dataframe that includes the features along with true and predicted prices of the testing dataset
-![](images/get_final_data1.png)
-![](images/get_final_data2.png)
+![](images/get_final_data1.PNG)
+![](images/get_final_data2.PNG)
 
 ## Prediction:
-![](images/predict_function.png)
+![](images/predict_function.PNG)
 
 ## Accuracy:
-![](images/calc_accuracy.png)
+![](images/calc_accuracy.PNG)
 
 #Data Visualizations:
 ## Plot:
-![](images/prediction_plot.png)
+![](images/prediction_plot.PNG)
 
 ## Some Dash Visualizations:
 Bollinger Bands:

@@ -41,22 +41,6 @@
 
 ![](images/mod1_lstm_rnn_summary.PNG)
 
-![](images/mod1_epochs1.PNG)
-![](images/mod1_epochs2.PNG)
-![](images/mod1_epochs3.PNG)
-![](images/mod1_epochs_last.PNG)
-
-![](images/mod1_save_and_evaluate.PNG)
-
-![](images/mod1_make_pred.PNG)
-
-![](images/mod1_df_actual_vs_pred1.PNG)
-![](images/mod1_df_actual_vs_pred2.PNG)
-
-![](images/mod_actual_vs_pred_plot.PNG)
-
-
-
 Epoch 1/100
 1/1 [==============================] - 6s 6s/step - loss: 0.2777
 Epoch 2/100
@@ -258,6 +242,16 @@ Epoch 99/100
 Epoch 100/100
 1/1 [==============================] - 0s 33ms/step - loss: 0.0074
 <tensorflow.python.keras.callbacks.History at 0x1bd5815e588>
+
+![](images/mod1_save_and_evaluate.PNG)
+
+![](images/mod1_make_pred.PNG)
+
+![](images/mod1_df_actual_vs_pred1.PNG)
+![](images/mod1_df_actual_vs_pred2.PNG)
+
+![](images/mod_actual_vs_pred_plot.PNG)
+
 
 # Model 3
 ## Gathering the Data:

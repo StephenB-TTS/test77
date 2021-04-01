@@ -8,38 +8,51 @@
 
 - Several RNN were constructed and fitted to determine buying and selling decisions.
 
-- We compared the performance of these models and the third model was deamed the best to build the automated trading bot around.
+- We compared the performance of these models and the third model was deemed the best to build the automated trading bot around.
 
 - Dash Gallery was used to create the front-end that enables user to monitor the bot's performance and to place the trades.
 
 # Model 1
 ## Gathering the Data:
+The Ticker Price Data was read in from Alpaca Markets.
 ![](images/mod1_fetch_data.PNG)
 ![](images/mod1_fetch_data2.PNG)
 
+The index was set to "time" and a time shift is performed. The resulting dataframe is displayed.
 ![](images/mod1_fetch_data_df.PNG)
 ![](images/mod1_fetch_data_df_output1.PNG)
 ![](images/mod1_fetch_data_df_output2.PNG)
 
+Nested functions are created to calculate the RSI values.  The EMA log and short term periods (5/13) are set here as well. Relational crossover signals are generated using the np.where function and set to a dataframe.
 ![](images/mod1_gen_ema_macd1.PNG)
 ![](images/mod1_gen_ema_macd2.PNG)
+
+Fast and Slow EMA windows are delineated here with additional crossover signals for the (9/21) EMAs.  A MACD signal is generated and assigned to dataframe.
 ![](images/mod1_gen_ema_macd3.PNG)
 ![](images/mod1_gen_ema_macd4.PNG)
 
-![](images/mod1_yf_recomendation.PNG)
+This function reads in data from Yahoo Finance for given tickers and returns a recommendation score that based on data from the site indications a buy, hold or sell recommendation.
+![](images/mod1_yf_recommendation.PNG)
 
+Feature and target values are inserted into the model.  In a nutshell, we want to predict tomorrows closing price based current price information, some EMAs, RSI and MACD inputs.
 ![](images/mod1_def_features_and_targets.PNG)
 
+Model is test, trained and split
 ![](images/mod1_test_train_split.PNG)
 
+Sample data is displayed after scaling, fitting and reshaping the model data.
 ![](images/mod1_sample_data1.PNG)
 ![](images/mod1_sample_data2.PNG)
 ![](images/mod1_sample_data3.PNG)
 
+Constructing the LSTM RNN / TensorFlow with KERAS for classification and prediction model
 ![](images/mod1_def_lstm_rnn1.PNG)
 ![](images/mod1_def_lstm_rnn2.PNG)
 
+Model summary is displayed
 ![](images/mod1_lstm_rnn_summary.PNG)
+
+Output of each of the 100 Epochs showing loss at each step.
 
 Epoch 1/100
 1/1 [==============================] - 6s 6s/step - loss: 0.2777
@@ -243,19 +256,23 @@ Epoch 100/100
 1/1 [==============================] - 0s 33ms/step - loss: 0.0074
 <tensorflow.python.keras.callbacks.History at 0x1bd5815e588>
 
+Model is saved to a .json file to be used later to make the trade.
 ![](images/mod1_save_and_evaluate.PNG)
 
+Using the model data, predictons are made.
 ![](images/mod1_make_pred.PNG)
 
+For comparission, actual and predicted closing prices are made into dataframes and displayed here.
 ![](images/mod1_df_actual_vs_pred1.PNG)
 ![](images/mod1_df_actual_vs_pred2.PNG)
 
+Plot of Actual vs Predicted Prices
 ![](images/mod_actual_vs_pred_plot.PNG)
 
 
 # Model 3
 ## Gathering the Data:
-The Ticker Price Data was read in from Yahoo Finance.  The Open, High, Low, Adjusted Close and the Volume were the feature Columns.
+The Ticker Price Data was read in from Yahoo Finance.  The Open, High, Low, Adjusted Close and the Volume were the feature columns.
 ![](images/get_data.PNG)
 ![](images/load_data.PNG)
 
@@ -273,7 +290,7 @@ Data is being prepared so it can be displayed in Dash.
 ![](images/load_for_dash.PNG)
 
 ## Get Final Data:
-This function takes the "model" and "data" dict to construct a final dataframe that includes the features along with true and predicted prices of the testing dataset
+This function takes the "model" and "data" dict to construct a final dataframe that includes the features along with true and predicted prices of the testing dataset.
 ![](images/get_final_data1.PNG)
 ![](images/get_final_data2.PNG)
 
@@ -308,7 +325,4 @@ Webull Options Chain:
 ![](images/Webull_Options_Chain.png)
 
 ## Final Analysis:
-Throughout the project, several models were tested, however, our third model proved to be the most accurate.
-
-
-
+Throughout the project, several models were tested and different indicators were used, however, the third model proved to be the most accurate. Model 3 used only Open, High, Low, Adjusted Close and Volume as features.  The accuracy plot has the actual price literally on top of the predicted price for almost the entire duration. This surprising outcome lends credence to the popular "less is more" idiom.  
